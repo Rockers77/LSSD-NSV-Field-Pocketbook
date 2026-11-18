@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSSD Field Pocketbook | Official Reference — Joshua Knox</title>
+    
+    <!-- Google Fonts: Oswald (Condensed), Inter (UI), JetBrains Mono (Document Numbering) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Top Classification Banner -->
+    <div class="classification-bar">
+        <span>DOC-ID: LSSD-FPM-2026-JK</span>
+        <span>FOR OFFICIAL DEPUTY USE ONLY // LOS SANTOS COUNTY SHERIFF DEPARTMENT </span>
+        <span>REV. 04.26</span>
+    </div>
+
+    <!-- Responsive Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-brand">
+                <img src="./assets/lssd-logo.png" 
+                     onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Seal_of_the_Los_Angeles_County_Sheriff%27s_Department.svg/240px-Seal_of_the_Los_Angeles_County_Sheriff%27s_Department.svg.png';" 
+                     alt="LSSD Seal" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-title">LSSD POCKETBOOK</span>
+                    <span class="brand-sub">COMPILED BY JOSHUA KNOX</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="nav-links" id="nav-menu">
+                <a href="#home" class="nav-item active">01. HOME</a>
+                <a href="#directory" class="nav-item">02. FIELD MANUALS</a>
+                <a href="#about" class="nav-item">03. ABOUT / AUTH</a>
+                <span class="nav-status">STATUS: ACTIVE DUTY</span>
+            </nav>
+
+            <!-- Hamburger Button -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="doc-tag">SECTION 01 // DEPARTMENTAL DIRECTIVE</div>
+                    <h1 class="hero-title">LOS SANTOS SHERIFF'S DEPARTMENT FIELD POCKETBOOK</h1>
+                    <p class="hero-subtitle">
+                        Panduan taktis cepat, kode radio, prosedur penanganan TKP, dan referensi hukum pidana bagi seluruh Deputy di lapangan. Disusun untuk akurasi operasional dan kepatuhan SOP.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#directory" class="btn btn-primary">AKSES DOKUMEN LAPANGAN</a>
+                        <a href="#about" class="btn btn-secondary">VERIFIKASI PENYUSUN</a>
+                    </div>
+                    <div class="hero-meta">
+                        <div><strong>JURISDICTION:</strong> LOS SANTOS COUNTY</div>
+                        <div><strong>CUSTODIAN:</strong> DEPUTY JOSHUA KNOX</div>
+                    </div>
+                </div>
+
+                <!-- Official LSSD Emblem Card -->
+                <div class="hero-emblem-box">
+                    <div class="box-header">
+                        <span>FIG 1.0 — OFFICIAL SEAL</span>
+                        <span>REF: 84-LSSD</span>
+                    </div>
+                    <div class="emblem-wrapper">
+                        <!-- Gunakan file lokal ./assets/lssd-logo.png setelah gambar disimpan -->
+                        <img src="./assets/lssd-logo.png" 
+                             onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Seal_of_the_Los_Angeles_County_Sheriff%27s_Department.svg/512px-Seal_of_the_Los_Angeles_County_Sheriff%27s_Department.svg.png';" 
+                             alt="Los Santos Sheriff Department Official Logo" class="hero-logo">
+                    </div>
+                    <div class="box-footer">
+                        <span>"A TRADITION OF SERVICE"</span>
+                        <span>EST. 1850</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Bar & Field Reference Directory -->
+        <section id="directory" class="directory-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="doc-tag">SECTION 02 // QUICK LOOKUP INDEX</span>
+                        <h2 class="section-title">FIELD REFERENCE DIRECTORY</h2>
+                    </div>
+                    <div class="doc-counter" id="result-counter">SHOWING 06 OF 06 RECORDS</div>
+                </div>
+
+                <!-- Search & Filter Controls -->
+                <div class="search-panel">
+                    <div class="search-input-group">
+                        <span class="search-prefix">QUERY //</span>
+                        <input type="text" id="search-input" placeholder="Cari kode radio (10-4), pasal penal code, atau SOP (contoh: Miranda, Pursuit, Felony Stop)..." autocomplete="off">
+                        <button id="clear-search" class="clear-btn" title="Reset Pencarian">CLEAR</button>
+                    </div>
+                    <div class="filter-tabs" id="filter-tabs">
+                        <button class="filter-btn active" data-category="ALL">ALL DOCS</button>
+                        <button class="filter-btn" data-category="RADIO">10-CODES</button>
+                        <button class="filter-btn" data-category="SOP">FIELD SOP</button>
+                        <button class="filter-btn" data-category="PENAL">PENAL CODE</button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Pocketbook Cards Grid -->
+                <div class="records-grid" id="records-container">
+                    <!-- Konten dirender otomatis oleh script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="doc-tag">SECTION 03 // ADMINISTRATIVE RECORD</span>
+                        <h2 class="section-title">ABOUT THIS POCKETBOOK</h2>
+                    </div>
+                    <span class="doc-id-stamp">AUTH: KNOX-J-01</span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-image-card">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" alt="Law Enforcement Tactical Desk">
+                        <div class="image-caption">FIG 3.1 — PATROL OPERATIONS & DOCUMENTATION STANDARD</div>
+                    </div>
+
+                    <div class="about-details">
+                        <h3 class="about-heading">STANDARISASI OPERASIONAL UNTUK DEPUTY DI LAPANGAN</h3>
+                        <p class="about-text">
+                            <strong>LSSD Field Pocketbook</strong> disusun dan dikelola oleh <strong>Joshua Knox</strong> sebagai instrumen referensi cepat bagi personel Los Santos Sheriff's Department saat menjalankan tugas patroli, investigasi awal, maupun situasi taktis berisiko tinggi.
+                        </p>
+                        <p class="about-text">
+                            Seluruh ringkasan prosedur di dalam dokumen digital ini mengacu pada standar buku saku penegakan hukum (*Field Operations Guide*) guna meminimalisir kesalahan prosedural, mempercepat komunikasi radio, serta memastikan hak-hak konstitusional terpenuhi saat penangkapan.
+                        </p>
+
+                        <div class="spec-table">
+                            <div class="spec-row">
+                                <span class="spec-label">DOCUMENT OWNER</span>
+                                <span class="spec-value">JOSHUA KNOX</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">TARGET AUDIENCE</span>
+                                <span class="spec-value">DEPUTIES — LOS SANTOS SHERIFF DEPARTMENT</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">CLASSIFICATION</span>
+                                <span class="spec-value">RESTRICTED // FIELD REFERENCE</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">DISTRIBUTION</span>
+                                <span class="spec-value">STATIC WEB MANUAL (GITHUB PAGES READY)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <strong>LSSD FIELD POCKETBOOK</strong> — COMPILED & MAINTAINED BY JOSHUA KNOX.
+            </div>
+            <div class="footer-right">
+                DOC-REV: 2026.11 // LOS SANTOS COUNTY SHERIFF'S DEPARTMENT
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
